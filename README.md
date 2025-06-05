@@ -1,5 +1,5 @@
 ## pyinfra-connector-lxcssh
-pyinfra Connector for executing commands inside LXC (not lxd) containers using SSH to host.
+[pyinfra](https://github.com/pyinfra-dev/pyinfra) connector for executing commands inside LXC (not lxd) containers using SSH to host.
 Containers can be managed by root (sudo needed) or other users.
 Inside the container execution is always as a root only.
 
@@ -38,3 +38,7 @@ In this case we know that the container is manager by root user (even thought th
     * https://github.com/pyinfra-dev/pyinfra-print-connector
     * pyinfra dockerssh connector - https://github.com/pyinfra-dev/pyinfra/blob/3.x/pyinfra/connectors/dockerssh.py
     * ansible lxc connector pluging - https://github.com/andreasscherbaum/ansible-lxc-ssh
+
+## Refs
+* oreginally was developm on this branch https://github.com/pyinfra-dev/pyinfra/pull/1282
+* inspiration came from https://github.com/pyinfra-dev/pyinfra/issues/677
