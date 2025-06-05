@@ -1,0 +1,11 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pyinfra-connector-lxcssh"
+version = "2025.06.05"
+
+# This is the key part - register the connector with pyinfra
+[project.entry-points."pyinfra.connectors"]
+lxcssh = "pyinfra_connector_lxcssh:LxcSSHConnector"
