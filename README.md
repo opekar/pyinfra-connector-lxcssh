@@ -5,36 +5,36 @@ Inside the container execution is always as a root only.
 
 ## Instalation
 * pip install pyinfra
-* pip install git+https://github.com/opekar/pyinfra-dev/pyinfra.git
+* pip install git+https://github.com/opekar/pyinfra-connector-lxcssh
 
 ## Usage
-    An inventory file (``inventory.py``) for connection to lxc container via lxc (not lxd):
+An inventory file (``inventory.py``) for connection to lxc container via lxc (not lxd):
 
-    ```python
+```python
 
-        hosts = [
-            ("lxcssh/host_lxc:container_name"),
-        ]
-    ```
+    hosts = [
+        ("lxcssh/host_lxc:container_name"),
+    ]
+```
 
-    pyinfra inventory.py deploy.py
+pyinfra inventory.py deploy.py
 
-    ```python
+```python
 
-        hosts = [
-            ("lxcssh/host_lxc:container_name", {"more ssh params here, or sudo relateing params"}),
-        ]
-    ```
+    hosts = [
+        ("lxcssh/host_lxc:container_name", {"more ssh params here, or sudo relateing params"}),
+    ]
+```
 
-    Another possibility:
+Another possibility:
 
-    In this case we know that the container is manager by root user (even thought the container itself can be unpriviledged)
-    ```bash
-        pyinfra  @lxcssh/lxc_host.company.example:container --sudo  exec -- lsb_release -a
-    ```
+In this case we know that the container is manager by root user (even thought the container itself can be unpriviledged)
+```bash
+    pyinfra  @lxcssh/lxc_host.company.example:container --sudo  exec -- lsb_release -a
+```
 
 ## Thanks
-* this repos is based on 
+* code is mix of following 
     * https://github.com/pyinfra-dev/pyinfra-print-connector
-    * pyinfra dockerssh connector
-    * https://github.com/andreasscherbaum/ansible-lxc-ssh  - ansible lxc connector pluging
+    * pyinfra dockerssh connector - https://github.com/pyinfra-dev/pyinfra/blob/3.x/pyinfra/connectors/dockerssh.py
+    * ansible lxc connector pluging - https://github.com/andreasscherbaum/ansible-lxc-ssh
